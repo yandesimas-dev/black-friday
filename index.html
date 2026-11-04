@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Black Friday LetzTalk Academy</title>
+<meta name="description" content="Black Friday LetzTalk Academy: acesso vitalício aos cursos de inglês, aulas ao vivo e individuais e plataforma gamificada. Entre no grupo VIP do WhatsApp e receba as condições primeiro.">
+<meta property="og:title" content="Black Friday LetzTalk · Destrave seu inglês para 2027">
+<meta property="og:description" content="Condições exclusivas liberadas primeiro no grupo VIP do WhatsApp.">
+<meta property="og:image" content="assets/turma-encontros.webp">
+<meta name="theme-color" content="#050505">
+<link rel="icon" href="assets/logo-branco-dourado.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#050505;
+  --bg2:#0B0A08;
+  --card:#121110;
+  --line:#2A251B;
+  --ink:#F3F7FA;
+  --muted:#A8A196;
+  --sky:#E9C46A;
+  --sky-soft:rgba(233,196,106,.10);
+  --gold:#E2B84F;
+  --gold-hi:#F7DC8A;
+  --gold-lo:#B8862E;
+  --gold-grad:linear-gradient(135deg,#F7DC8A 0%,#E2B84F 45%,#B8862E 100%);
+  --gold-soft:rgba(226,184,79,.10);
+  --wa:#25D366;
+  --wa-dark:#1DB954;
+  --radius:22px;
+  --maxw:1160px;
+  --pad:clamp(1rem,4vw,2rem);
+  --sans:"Poppins",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.02rem;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.025em;text-wrap:balance}
+h1{font-size:clamp(2.2rem,1.4rem + 4vw,4.4rem);font-weight:900}
+h2{font-size:clamp(1.75rem,1.3rem + 2vw,2.9rem);font-weight:800}
+h3{font-size:1.12rem;font-weight:700;line-height:1.3}
+p{margin:0}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.sec{padding-block:clamp(3.5rem,8vw,6.5rem)}
+.sec--alt{background:var(--bg2);border-block:1px solid var(--line)}
+.center{text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+.center .eyebrow::after{content:"";width:22px;height:2px;background:currentColor;border-radius:2px}
+.sub{color:var(--muted);font-size:clamp(1.02rem,.98rem + .3vw,1.18rem);max-width:60ch}
+.center .sub{margin-inline:auto}
+.gold{color:var(--gold)}
+.sky{color:var(--sky)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:10px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.65rem;text-decoration:none;font-weight:800;letter-spacing:.02em;
+  background:var(--gold-grad);color:#1A1205;padding:1.1rem 2rem;border-radius:999px;font-size:1.02rem;
+  box-shadow:0 14px 36px -12px rgba(226,184,79,.55),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -3px 0 rgba(0,0,0,.18);
+  transition:transform .18s ease,background .18s ease,box-shadow .18s ease;position:relative;isolation:isolate}
+.btn:hover{filter:brightness(1.07);transform:translateY(-2px);box-shadow:0 18px 44px -12px rgba(226,184,79,.75)}
+.btn svg{width:22px;height:22px;flex:none}
+.btn--lg{padding:1.25rem 2.4rem;font-size:1.1rem}
+.btn--pulse::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;animation:pulse 2.2s ease-out infinite;box-shadow:0 0 0 0 rgba(37,211,102,.55)}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(226,184,79,.5)}80%,100%{box-shadow:0 0 0 18px rgba(226,184,79,0)}}
+.btn-note{display:flex;align-items:center;gap:.45rem;font-size:.82rem;color:var(--muted);margin-top:.85rem}
+.center .btn-note{justify-content:center}
+.btn-note i{width:8px;height:8px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 4px rgba(37,211,102,.18);flex:none}
+.gold-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5}
+
+/* Top bar */
+.topbar{background:var(--gold-grad);color:#1A1205;font-size:.82rem;font-weight:700;text-align:center;padding:.55rem var(--pad);letter-spacing:.01em}
+.topbar a{text-decoration:underline;text-underline-offset:3px}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.7rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand img{width:36px;height:36px}
+.brand b{display:block;font-weight:800;letter-spacing:-.01em;line-height:1.05}
+.brand span{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.nav .btn{padding:.65rem 1.2rem;font-size:.85rem;box-shadow:none}
+.nav .btn svg{width:18px;height:18px}
+@media(max-width:560px){.nav .btn span.long{display:none}}
+
+/* Hero */
+.hero{position:relative;padding-block:clamp(2.5rem,6vw,5rem) clamp(3rem,7vw,5.5rem);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:120%;pointer-events:none;
+  background:radial-gradient(50% 45% at 15% 15%,rgba(226,184,79,.16),transparent 70%),radial-gradient(40% 40% at 92% 8%,rgba(247,220,138,.10),transparent 70%)}
+.hero-grid{position:relative;display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:center}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.bf-tag{display:inline-flex;align-items:center;gap:.6rem;border:1px solid rgba(226,184,79,.4);background:var(--gold-soft);color:var(--gold);
+  font-weight:800;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;padding:.45rem 1rem;border-radius:999px}
+.bf-tag b{background:var(--gold-grad);color:#1A1205;padding:.1rem .5rem;border-radius:6px;letter-spacing:.06em}
+.hero h1{margin-top:1.1rem}
+.hero h1 .hl{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{margin-top:1.1rem}
+.hero-cta{margin-top:1.8rem}
+.checks{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.55rem}
+.checks li{display:flex;gap:.65rem;align-items:flex-start;font-weight:500}
+.checks svg{width:20px;height:20px;color:var(--gold);flex:none;margin-top:.2rem}
+
+/* Countdown */
+.countdown{margin-top:1.8rem;display:flex;flex-direction:column;gap:.6rem}
+.countdown small{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.cd{display:flex;gap:.55rem}
+.cd div{min-width:68px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.55rem .4rem;text-align:center}
+.cd b{display:block;font-size:1.6rem;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.cd span{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero collage */
+.collage{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.collage figure{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--card);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage .c1{grid-column:1 / -1;aspect-ratio:16/9}
+.collage .c2,.collage .c3{aspect-ratio:4/3}
+.live-pill{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:.45rem;background:rgba(5,5,5,.8);backdrop-filter:blur(6px);
+  font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .75rem;border-radius:999px;border:1px solid var(--line)}
+.live-pill i{width:8px;height:8px;border-radius:50%;background:#FF4D4D;animation:blink 1.4s infinite}
+@keyframes blink{50%{opacity:.25}}
+.stat-float{position:absolute;right:-6px;bottom:-18px;background:var(--gold-grad);color:#1A1205;border-radius:16px;padding:.7rem 1rem;font-weight:800;line-height:1.15;
+  box-shadow:0 20px 40px -18px rgba(226,184,79,.6);font-size:.9rem;transform:rotate(-3deg)}
+.stat-float b{display:block;font-size:1.5rem}
+
+/* Marquee strip */
+.strip{background:#0B0A08;color:var(--gold);overflow:hidden;white-space:nowrap;border-block:1px solid var(--line)}
+.strip-track{display:inline-flex;gap:2.5rem;padding:.85rem 0;animation:marq 32s linear infinite;font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem}
+.strip-track span::after{content:"✦";margin-left:2.5rem}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* Section heads */
+.head{display:flex;flex-direction:column;gap:.9rem;margin-bottom:clamp(2rem,5vw,3rem)}
+.head.center{align-items:center}
+
+/* Why group */
+.why{display:grid;gap:1rem;grid-template-columns:1fr}
+@media(min-width:620px){.why{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.why{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:.75rem}
+.card p{color:var(--muted);font-size:.95rem}
+.ico{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--sky-soft);color:var(--sky)}
+.ico svg{width:26px;height:26px}
+.ico--gold{background:var(--gold-soft);color:var(--gold)}
+
+/* Offer */
+.offer{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media(min-width:760px){.offer{grid-template-columns:repeat(6,1fr)}
+  .offer .o-a{grid-column:span 3}.offer .o-b{grid-column:span 3}
+  .offer .o-c,.offer .o-d,.offer .o-e{grid-column:span 2}}
+.o-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem 1.6rem;overflow:hidden;display:flex;flex-direction:column;gap:.7rem}
+.o-card .num{font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--gold)}
+.o-card p{color:var(--muted);font-size:.96rem}
+.o-card--hero{background:linear-gradient(160deg,rgba(226,184,79,.16),rgba(226,184,79,.02) 60%),var(--card);border-color:rgba(226,184,79,.45)}
+.o-card--hero h3{font-size:1.45rem}
+.o-card .ribbon{align-self:flex-start;background:var(--gold-grad);color:#1A1205;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.3rem .65rem;border-radius:6px}
+.o-img{margin-top:auto;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.o-img img{width:100%;aspect-ratio:16/8;object-fit:cover}
+
+/* Belts */
+.belts-wrap{display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:center}
+@media(min-width:960px){.belts-wrap{grid-template-columns:1fr 1.1fr}}
+.belts{display:flex;flex-direction:column;gap:.7rem;position:relative}
+.belt{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:.9rem 1.1rem;transition:transform .2s ease,border-color .2s ease}
+.belt:hover{transform:translateX(6px);border-color:var(--bc)}
+.belt-sw{width:58px;height:18px;border-radius:5px;background:var(--bc);position:relative;box-shadow:inset 0 -3px 0 rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.12)}
+.belt-sw::after{content:"";position:absolute;left:50%;top:-4px;bottom:-4px;width:12px;transform:translateX(-50%);background:var(--bc);filter:brightness(.8);border-radius:3px}
+.belt h3{font-size:1rem}
+.belt p{font-size:.84rem;color:var(--muted);line-height:1.4}
+.belt .rw{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);background:var(--gold-soft);padding:.3rem .55rem;border-radius:6px;white-space:nowrap}
+@media(max-width:480px){.belt{grid-template-columns:auto 1fr}.belt .rw{grid-column:2;justify-self:start}}
+.app-shot{position:relative;max-width:420px;margin-inline:auto}
+.app-shot img{border-radius:22px;border:1px solid var(--line);box-shadow:0 40px 80px -40px rgba(226,184,79,.45)}
+.xp{position:absolute;left:-12px;top:22px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:.6rem .85rem;font-size:.8rem;font-weight:700;display:flex;gap:.5rem;align-items:center;box-shadow:0 16px 30px -16px rgba(0,0,0,.8)}
+.xp b{color:var(--gold)}
+
+/* Teacher */
+.teacher{display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:center}
+@media(min-width:900px){.teacher{grid-template-columns:.9fr 1.1fr}}
+.t-photo{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3}
+.t-photo img{width:100%;height:100%;object-fit:cover}
+.o-img img[src*="aluno-"]{object-position:50% 30%}
+.t-badge{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:.6rem;background:rgba(5,5,5,.85);backdrop-filter:blur(6px);border:1px solid var(--line);padding:.55rem .85rem;border-radius:14px;font-size:.85rem;font-weight:600}
+.t-badge img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-top:1.6rem}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1rem .8rem;text-align:center}
+.fact b{display:block;font-size:1.6rem;font-weight:800;color:var(--gold);line-height:1.1}
+.fact span{font-size:.78rem;color:var(--muted);line-height:1.3;display:block;margin-top:.3rem}
+.method{display:grid;gap:.8rem;margin-top:1.4rem}
+.method div{display:flex;gap:.8rem;align-items:flex-start}
+.method .ico{width:40px;height:40px;border-radius:12px;flex:none}
+.method .ico svg{width:20px;height:20px}
+.method p{color:var(--muted);font-size:.95rem}
+.method strong{color:var(--ink);display:block}
+
+/* Gallery */
+.gallery{display:grid;gap:.8rem;grid-template-columns:1fr 1fr}
+@media(min-width:900px){.gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:190px}
+  .gallery .g-big{grid-column:span 2;grid-row:span 2}
+  .gallery .g-wide{grid-column:span 2}}
+.gallery figure{margin:0;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:var(--card);aspect-ratio:4/3}
+@media(min-width:900px){.gallery figure{aspect-ratio:auto}}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.gallery figure:hover img{transform:scale(1.04)}
+@media(max-width:899px){.gallery .g-big{grid-column:1 / -1;aspect-ratio:16/11}}
+
+/* Testimonials */
+.testi{columns:1;column-gap:1rem}
+@media(min-width:640px){.testi{columns:2}}
+@media(min-width:1000px){.testi{columns:3}}
+.testi figure{break-inside:avoid;margin:0 0 1rem;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#fff}
+
+/* Steps */
+.steps{display:grid;gap:1rem;grid-template-columns:1fr;counter-reset:s}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem 1.5rem;counter-increment:s}
+.step::before{content:counter(s);display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--gold-grad);color:#1A1205;font-weight:900;font-size:1.15rem;margin-bottom:1rem}
+.step p{color:var(--muted);font-size:.95rem;margin-top:.45rem}
+
+/* FAQ */
+.faq{max-width:780px;margin-inline:auto;display:grid;gap:.7rem}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:0 1.3rem}
+.faq summary{list-style:none;cursor:pointer;padding:1.15rem 0;font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;font-weight:400;color:var(--gold);transition:transform .2s ease;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);padding-bottom:1.2rem}
+
+/* Final */
+.final{position:relative;border-radius:28px;overflow:hidden;padding:clamp(2.4rem,6vw,4.5rem) clamp(1.3rem,5vw,4rem);text-align:center;
+  background:radial-gradient(60% 80% at 50% 0%,rgba(226,184,79,.2),transparent 70%),linear-gradient(180deg,#14120D,#080807);border:1px solid rgba(226,184,79,.4)}
+.final h2{max-width:20ch;margin-inline:auto}
+.final .sub{margin-top:1rem}
+.final .btn{margin-top:2rem}
+.avatars{display:flex;justify-content:center;margin-top:1.6rem}
+.avatars img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:3px solid #0E0D0A;margin-left:-10px}
+.avatars img:first-child{margin-left:0}
+.avatars-note{font-size:.85rem;color:var(--muted);margin-top:.6rem}
+
+footer{padding:2.5rem 0 7rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+@media(min-width:760px){footer{padding-bottom:2.5rem}}
+
+/* Sticky mobile CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:.75rem var(--pad) calc(.75rem + env(safe-area-inset-bottom));background:rgba(5,5,5,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  transform:translateY(110%);transition:transform .3s ease}
+.sticky.on{transform:none}
+.sticky .btn{width:100%;padding:1rem}
+@media(min-width:760px){.sticky{display:none}}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .strip-track,.btn--pulse::after,.live-pill i{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ====== TROQUE AQUI o link do grupo (aparece em todos os botões) ====== -->
+<!-- Procure por: https://chat.whatsapp.com/SEU-LINK-AQUI -->
+
+<div class="topbar">🔥 BLACK FRIDAY LETZTALK · abre 24/11 às 20h, primeiro no grupo VIP · <a href="https://chat.whatsapp.com/SEU-LINK-AQUI" data-wa>entrar agora</a></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#topo" aria-label="LetzTalk Academy">
+      <img src="assets/logo-branco-dourado.png" alt="" width="36" height="36">
+      <div><b>LetzTalk Academy</b><span>Black Friday</span></div>
+    </a>
+    <a class="btn" href="https://chat.whatsapp.com/SEU-LINK-AQUI" data-wa target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.43 9.43 0 0 1-1.44-5.03c0-5.2 4.24-9.44 9.45-9.44a9.38 9.38 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.04.7C5.77.7.67 5.8.67 12.07c0 2 .52 3.96 1.52 5.68L.57 23.7l6.08-1.6a11.33 11.33 0 0 0 5.4 1.38h.01c6.26 0 11.36-5.1 11.37-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>
+      <span>Grupo <span class="long">VIP</span></span>
+    </a>
+  </div>
+</header>
+
+<main id="topo">
+
+<!-- ====== HERO ====== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="bf-tag"><b>BLACK</b> Friday 2026</span>
+      <h1>Destrave seu inglês em <span class="hl">2027</span> começando agora.</h1>
+      <p class="sub">A Black Friday mais agressiva que a LetzTalk já fez: <b style="color:var(--ink)">acesso vitalício</b> aos cursos, aulas ao vivo e individuais e a plataforma gamificada. As condições saem <b style="color:var(--ink)">primeiro e só</b> no grupo VIP do WhatsApp.</p>
+
+      <ul class="checks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Acesso vitalício a todos os cursos de inglês</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Aulas ao vivo e individuais com o professor Yan</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Plataforma gamificada com sistema de faixas e recompensas</li>
+      </ul>
+
+      <div class="hero-cta">
+        <a class="btn btn--lg btn--pulse" href="https://chat.whatsapp.com/SEU-LINK-AQUI" data-wa target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.490-1.77-1.66-2.070-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.070 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.43 9.43 0 0 1-1.44-5.03c0-5.2 4.24-9.44 9.45-9.44a9.38 9.38 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.440-9.45 9.44zm8.04-17.48A11.3 11.3 0 0 0 12.04.7C5.77.7.67 5.8.67 12.07c0 2 .52 3.96 1.52 5.68L.57 23.7l6.08-1.6a11.33 11.33 0 0 0 5.4 1.38h.01c6.26 0 11.36-5.1 11.37-11.37 0-3.04-1.18-5.89-3.33-8.04z"/></svg>
+          Quero entrar no grupo VIP
+        </a>
+        <p class="btn-note"><i></i>Gratuito · você só recebe avisos da Black Friday</p>
+      </div>
+
+      <div class="countdown" aria-live="polite">
+        <small id="cd-label">As ofertas abrem no grupo dia 24/11 às 20h</small>
+        <div class="cd" id="cd">
+          <div><b data-u="d">00</b><span>dias</span></div>
+          <div><b data-u="h">00</b><span>horas</span></div>
+          <div><b data-u="m">00</b><span>min</span></div>
+          <div><b data-u="s">00</b><span>seg</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="collage">
+      <figure class="c1"><img src="assets/turma-encontros.webp" alt="Professor Yan em aula ao vivo com vários alunos da LetzTalk Academy" width="1500" height="1159" fetchpriority="high"></figure>
+      <span class="live-pill"><i></i>Aula ao vivo</span>
+      <figure class="c2"><img src="assets/aluno-thauan.webp" alt="Aula individual ao vivo do professor Yan com um aluno" width="488" height="885" loading="lazy" style="object-position:50% 35%"></figure>
+      <figure class="c3"><img src="assets/aluno-michael.webp" alt="Aula individual ao vivo do professor Yan com um aluno" width="1792" height="900" loading="lazy" style="object-position:50% 30%"></figure>
+      <div class="stat-float"><b>Vitalício</b>pague uma vez,<br>estude para sempre</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>Black Friday LetzTalk</span><span>Acesso vitalício</span><span>Aulas ao vivo e individuais</span><span>Inglês de verdade, o de lá fora</span><span>Sistema de faixas</span><span>Destrave em 2027</span>
+    <span>Black Friday LetzTalk</span><span>Acesso vitalício</span><span>Aulas ao vivo e individuais</span><span>Inglês de verdade, o de lá fora</span><span>Sistema de faixas</span><span>Destrave em 2027</span>
+  </div>
+</div>
+
+<!-- ====== POR QUE ENTRAR NO GRUPO ====== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">Por que entrar no grupo</span>
+      <h2>Quem está no grupo VIP<br>sai na frente.</h2>
+      <p class="sub">As condições especiais são limitadas e vão ser anunciadas lá antes de qualquer outro lugar.</p>
+    </div>
+    <div class="why">
+      <div class="card rv">
+        <div class="ico ico--gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Acesso antecipado</h3>
+        <p>O link da oferta chega no grupo antes de abrir para o público.</p>
+      </div>
+      <div class="card rv">
+        <div class="ico ico--gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div>
+        <h3>Condição exclusiva</h3>
+        <p>O melhor preço e os bônus do ano ficam reservados para quem está dentro.</p>
+      </div>
+      <div class="card rv">
+        <div class="ico ico--gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Vagas limitadas</h3>
+        <p>As aulas são individuais, então o número de alunos novos é limitado.</p>
+      </div>
+      <div class="card rv">
+        <div class="ico ico--gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+        <h3>Sem spam</h3>
+        <p>Só os avisos que importam. Quando a Black acabar, você pode sair quando quiser.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== O QUE VOCÊ RECEBE ====== -->
+<section class="sec sec--alt" id="oferta">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">O que vem na Black</span>
+      <h2>Tudo o que você precisa para<br>falar inglês de verdade.</h2>
+      <p class="sub">Uma metodologia focada na <b style="color:var(--ink)">estrutura</b> e na <b style="color:var(--ink)">fala</b>, para você parar de travar e usar o inglês que se fala lá fora.</p>
+    </div>
+
+    <div class="offer">
+      <article class="o-card o-card--hero o-a rv">
+        <span class="ribbon">Exclusivo Black Friday</span>
+        <h3>Acesso vitalício aos cursos de inglês</h3>
+        <p>Do básico ao avançado, organizado por nível. Você paga uma vez e tem acesso para sempre, sem mensalidade e sem prazo para terminar.</p>
+        <div class="o-img"><img src="assets/biblioteca-aulas.webp" alt="Biblioteca de cursos da plataforma LetzTalk Academy" width="1500" height="773" loading="lazy"></div>
+      </article>
+      <article class="o-card o-b rv">
+        <span class="num">02</span>
+        <h3>Aulas ao vivo e individuais</h3>
+        <p>Só você e o professor. A aula segue o seu ritmo e o seu objetivo, com correção na hora para você começar a falar desde o primeiro dia.</p>
+        <div class="o-img"><img src="assets/aluno-joao.webp" alt="Aula individual ao vivo com o professor Yan" width="556" height="1010" loading="lazy" style="object-position:50% 40%"></div>
+      </article>
+      <article class="o-card o-c rv">
+        <span class="num">03</span>
+        <h3>Método de estrutura + fala</h3>
+        <p>Você entende como o inglês é montado e treina falando. Sem decorar listas que você esquece na semana seguinte.</p>
+      </article>
+      <article class="o-card o-d rv">
+        <span class="num">04</span>
+        <h3>O inglês usado lá fora</h3>
+        <p>Expressões, gírias e pronúncia de quem vive o idioma no dia a dia, não o inglês de livro.</p>
+      </article>
+      <article class="o-card o-e rv">
+        <span class="num">05</span>
+        <h3>Plataforma gamificada</h3>
+        <p>Treinos curtos, pronúncia com IA e um sistema de faixas que mostra cada passo da sua evolução.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SISTEMA DE FAIXAS ====== -->
+<section class="sec" id="faixas">
+  <div class="wrap belts-wrap">
+    <div>
+      <div class="head rv" style="margin-bottom:1.6rem">
+        <span class="eyebrow">Sistema de faixas</span>
+        <h2>Suba de faixa e <span class="gold">veja</span> sua evolução.</h2>
+        <p class="sub">Na plataforma, cada treino conta pontos. Você sobe de faixa, desbloqueia recompensas e enxerga claramente o quanto já evoluiu. Estudar vira hábito porque dá vontade de voltar.</p>
+      </div>
+      <div class="belts">
+        <div class="belt rv" style="--bc:#E9EEF2"><span class="belt-sw"></span><div><h3>Faixa Branca</h3><p>Primeiras frases e base da estrutura</p></div><span class="rw">Início</span></div>
+        <div class="belt rv" style="--bc:#FFC83D"><span class="belt-sw"></span><div><h3>Faixa Amarela</h3><p>Conversas do dia a dia com confiança</p></div><span class="rw">Recompensa</span></div>
+        <div class="belt rv" style="--bc:#2FBF71"><span class="belt-sw"></span><div><h3>Faixa Verde</h3><p>Viagem, trabalho e situações reais</p></div><span class="rw">Recompensa</span></div>
+        <div class="belt rv" style="--bc:#36A8DE"><span class="belt-sw"></span><div><h3>Faixa Azul</h3><p>Fluidez, opinião e argumentação</p></div><span class="rw">Recompensa</span></div>
+        <div class="belt rv" style="--bc:#1B1B1B;border-color:rgba(226,184,79,.45)"><span class="belt-sw"></span><div><h3>Faixa Preta</h3><p>Inglês destravado de verdade</p></div><span class="rw">Fluência</span></div>
+      </div>
+    </div>
+    <div class="app-shot rv">
+      <img src="assets/app-pronuncia.webp" alt="Tela do aplicativo de pronúncia da LetzTalk Academy com nota por palavra" width="860" height="1169" loading="lazy">
+      <div class="xp">⭐ <span>+120 XP</span> <b>· nova faixa!</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PROFESSOR ====== -->
+<section class="sec sec--alt" id="professor">
+  <div class="wrap teacher">
+    <div class="t-photo rv">
+      <img src="assets/aula-ao-vivo.webp" alt="Professor Yan em aula ao vivo com alunos" width="1200" height="1138" loading="lazy" style="object-position:50% 20%">
+      <div class="t-badge"><img src="assets/professor-yan.webp" alt="" width="40" height="40">Prof. Yan Simas</div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Quem vai te ensinar</span>
+      <h2 style="margin-top:.9rem">Eu aprendi inglês lá fora. Agora ensino o caminho.</h2>
+      <p class="sub" style="margin-top:1rem">Sou o Yan. Morei 4 anos nos Estados Unidos, onde cheguei ao nível acadêmico de inglês. Sei exatamente o que trava o brasileiro na hora de falar e montei o método da LetzTalk para resolver isso de forma direta.</p>
+      <div class="facts">
+        <div class="fact"><b>4 anos</b><span>morando nos EUA</span></div>
+        <div class="fact"><b>Acadêmico</b><span>nível de inglês alcançado</span></div>
+        <div class="fact"><b>1:1</b><span>aulas individuais e ao vivo</span></div>
+      </div>
+      <div class="method">
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><p><strong>Estrutura</strong>Você entende como montar qualquer frase, em vez de decorar.</p></div>
+        <div><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg></span><p><strong>Fala</strong>Você abre a boca desde a primeira aula, com correção na hora.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== GALERIA DE AULAS ====== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">Por dentro das aulas</span>
+      <h2>Alunos reais, aulas reais.</h2>
+      <p class="sub">É assim que é uma aula na LetzTalk: ao vivo, leve e com muita conversa.</p>
+    </div>
+    <div class="gallery">
+      <figure class="g-big rv"><img src="assets/turma-encontros.webp" alt="Encontro ao vivo do professor Yan com vários alunos" width="1500" height="1159" loading="lazy"></figure>
+      <figure class="rv"><img src="assets/aluno-joao.webp" alt="Aula ao vivo com aluno" width="556" height="1010" loading="lazy" style="object-position:50% 45%"></figure>
+      <figure class="rv"><img src="assets/aluno-thauan.webp" alt="Aula ao vivo com aluno" width="488" height="885" loading="lazy" style="object-position:50% 40%"></figure>
+      <figure class="g-wide rv"><img src="assets/aluno-michael.webp" alt="Aula ao vivo com aluno" width="1792" height="900" loading="lazy" style="object-position:50% 35%"></figure>
+      <figure class="g-wide rv"><img src="assets/aula-ao-vivo.webp" alt="Professor Yan e alunos fazendo joinha em aula ao vivo" width="1200" height="1138" loading="lazy" style="object-position:50% 30%"></figure>
+      <figure class="g-wide rv"><img src="assets/biblioteca-aulas.webp" alt="Plataforma de cursos da LetzTalk" width="1500" height="773" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DEPOIMENTOS ====== -->
+<section class="sec sec--alt" id="depoimentos">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">Depoimentos</span>
+      <h2>Quem destravou conta como foi.</h2>
+    </div>
+    <div class="testi">
+      <figure class="rv"><img src="assets/depoimento-01.webp" alt="Mensagem de aluno: eu não sabia literalmente nada, nem a forma de pronunciar, mas foi um dos melhores investimentos; passei na imigração e consegui entender e conversar." width="760" height="570" loading="lazy"></figure>
+      <figure class="rv"><img src="assets/depoimento-02.webp" alt="Mensagem de aluno: o desenvolvimento do meu inglês tem sido notório, as aulas são direcionadas aos meus objetivos. Recomendo muito o professor Yan." width="760" height="331" loading="lazy"></figure>
+      <figure class="rv"><img src="assets/depoimento-03.webp" alt="Mensagem de aluno elogiando a dedicação do professor e a forma de adaptar o ensino às dificuldades do aluno." width="760" height="587" loading="lazy"></figure>
+      <figure class="rv"><img src="assets/depoimento-04.webp" alt="Mensagem de aluno: suas aulas são excelentes, excelente didática, tem me ajudado muito a evoluir." width="760" height="362" loading="lazy"></figure>
+      <figure class="rv"><img src="assets/depoimento-05.webp" alt="Mensagem de aluno: você explica muito bem, super fácil de entender; achei bem legal a plataforma com os cards de lembrança, gírias e expressões." width="760" height="377" loading="lazy"></figure>
+      <figure class="rv"><img src="assets/depoimento-06.webp" alt="Mensagem de aluno: a aula foi ótima, você tem uma didática incrível." width="760" height="299" loading="lazy"></figure>
+    </div>
+    <div class="center" style="margin-top:2rem">
+      <a class="btn btn--lg" href="https://chat.whatsapp.com/SEU-LINK-AQUI" data-wa target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04.7C5.77.7.67 5.8.67 12.07c0 2 .52 3.96 1.52 5.68L.57 23.7l6.08-1.6a11.33 11.33 0 0 0 5.4 1.38c6.27 0 11.37-5.1 11.37-11.37S18.31.7 12.04.7z"/></svg>
+        Quero ser o próximo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== COMO FUNCIONA ====== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">Como garantir</span>
+      <h2>3 passos para não ficar de fora.</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><h3>Entre no grupo VIP</h3><p>Clique no botão verde e entre no grupo do WhatsApp. Leva 10 segundos.</p></div>
+      <div class="step rv"><h3>Ative as notificações</h3><p>A oferta abre por tempo limitado. Deixe o grupo com som para ver na hora.</p></div>
+      <div class="step rv"><h3>Garanta sua vaga</h3><p>Quando o link chegar, garanta o acesso vitalício com a condição de Black Friday.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="sec sec--alt" id="duvidas">
+  <div class="wrap">
+    <div class="head center rv">
+      <span class="eyebrow">Dúvidas</span>
+      <h2>Perguntas frequentes</h2>
+    </div>
+    <div class="faq">
+      <details class="rv"><summary>Entrar no grupo tem algum custo?</summary><p>Não. O grupo é gratuito e serve para você receber as condições da Black Friday antes de todo mundo.</p></details>
+      <details class="rv"><summary>O que significa acesso vitalício?</summary><p>Você paga uma vez e tem acesso aos cursos de inglês para sempre, sem mensalidade e sem data para terminar.</p></details>
+      <details class="rv"><summary>Sou iniciante. Consigo acompanhar?</summary><p>Sim. Como as aulas são individuais, o conteúdo parte do seu nível atual. Quem começa do zero fala desde a primeira aula, com apoio em português quando precisar.</p></details>
+      <details class="rv"><summary>Como funcionam as aulas ao vivo?</summary><p>São aulas online, ao vivo e individuais com o professor. Entre uma aula e outra, você continua treinando na plataforma gamificada.</p></details>
+      <details class="rv"><summary>Como funciona o sistema de faixas?</summary><p>Cada treino na plataforma soma pontos. Conforme você evolui, sobe de faixa, desbloqueia recompensas e acompanha seu progresso de forma visual.</p></details>
+      <details class="rv"><summary>Quando a oferta abre?</summary><p>Dia 24 de novembro, às 20h (horário de Brasília), primeiro no grupo VIP. Entre agora para receber o link na hora.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA FINAL ====== -->
+<section class="sec">
+  <div class="wrap">
+    <div class="final rv">
+      <span class="bf-tag"><b>BLACK</b> Friday 2026</span>
+      <h2 style="margin-top:1.2rem">2027 pode ser o ano em que você finalmente fala inglês.</h2>
+      <p class="sub">A decisão começa agora. Entre no grupo VIP e seja o primeiro a receber a condição mais especial do ano.</p>
+      <a class="btn btn--lg btn--pulse" href="https://chat.whatsapp.com/SEU-LINK-AQUI" data-wa target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04.7C5.77.7.67 5.8.67 12.07c0 2 .52 3.96 1.52 5.68L.57 23.7l6.08-1.6a11.33 11.33 0 0 0 5.4 1.38c6.27 0 11.37-5.1 11.37-11.37S18.31.7 12.04.7z"/></svg>
+        Entrar no grupo VIP agora
+      </a>
+      <div class="avatars" aria-hidden="true">
+        <img src="assets/professor-yan.webp" alt="">
+        <img src="assets/aluno-joao.webp" alt="" style="object-position:50% 40%">
+        <img src="assets/aluno-thauan.webp" alt="" style="object-position:50% 40%">
+        <img src="assets/aluno-michael.webp" alt="" style="object-position:50% 40%">
+      </div>
+      <p class="avatars-note">Junte-se aos alunos que já estão destravando o inglês</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img src="assets/logo-branco-dourado.png" alt="" width="28" height="28" style="width:28px;height:28px"><b>LetzTalk Academy</b></div>
+    <span>yansimas@letztalk.com.br · © 2026 · Todos os direitos reservados</span>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <a class="btn" href="https://chat.whatsapp.com/SEU-LINK-AQUI" data-wa target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04.7C5.77.7.67 5.8.67 12.07c0 2 .52 3.96 1.52 5.68L.57 23.7l6.08-1.6a11.33 11.33 0 0 0 5.4 1.38c6.27 0 11.37-5.1 11.37-11.37S18.31.7 12.04.7z"/></svg>
+    Entrar no grupo VIP da Black
+  </a>
+</div>
+
+<script>
+(function(){
+  /* ===== CONFIGURAÇÃO ===== */
+  // Data/hora em que as ofertas abrem no grupo (horário de Brasília)
+  var ABERTURA = new Date("2026-11-24T20:00:00-03:00");
+
+  // Countdown
+  var el = document.getElementById("cd");
+  var label = document.getElementById("cd-label");
+  function pad(n){return String(n).padStart(2,"0")}
+  function tick(){
+    var diff = ABERTURA - new Date();
+    if (diff <= 0){
+      label.textContent = "As ofertas já estão liberadas no grupo";
+      el.style.display = "none";
+      return;
+    }
+    var s = Math.floor(diff/1000);
+    el.querySelector('[data-u="d"]').textContent = pad(Math.floor(s/86400));
+    el.querySelector('[data-u="h"]').textContent = pad(Math.floor(s%86400/3600));
+    el.querySelector('[data-u="m"]').textContent = pad(Math.floor(s%3600/60));
+    el.querySelector('[data-u="s"]').textContent = pad(s%60);
+    setTimeout(tick, 1000);
+  }
+  tick();
+
+  // Reveal on scroll
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var items = document.querySelectorAll(".rv");
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function(e){e.classList.add("in")});
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+    }, {rootMargin:"0px 0px -6% 0px", threshold:.06});
+    items.forEach(function(e){io.observe(e)});
+  }
+
+  // Sticky CTA no mobile depois do hero
+  var sticky = document.getElementById("sticky");
+  var hero = document.querySelector(".hero");
+  window.addEventListener("scroll", function(){
+    sticky.classList.toggle("on", hero.getBoundingClientRect().bottom < 0);
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
